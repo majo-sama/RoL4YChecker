@@ -1,6 +1,9 @@
-## RoL4YChecker 0.1.0
+# RoL4YChecker 0.1.0
 
-このツールは、Ragnarok Online のジューンブライドイベントで登場した MD『Letter For You』(2024年) のいわゆる街クエ部分の進行状況を可視化するものです。
+このツールは、Ragnarok Online のジューンブライドイベントで登場した MD『Letter For You』(2024年版) のいわゆる街クエ部分の進行状況を可視化するものです。
+
+![image](https://github.com/majo-sama/RoL4YChecker/assets/157029319/8876eac9-f829-425f-9c2d-08c0c5a1cb0b)
+
 
 ## ダウンロード
 
