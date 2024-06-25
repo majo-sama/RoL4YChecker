@@ -7,7 +7,8 @@
 
 ## ダウンロード
 
-- [RoL4YChecker.zip](https://github.com/majo-sama/RoL4YChecker/releases/download/0.1.0/RoL4YChecker.zip)
+- ~~[RoL4YChecker.zip](https://github.com/majo-sama/RoL4YChecker/releases/download/0.1.0/RoL4YChecker.zip)~~
+  - 不具合修正中！
 
 ## 使い方
 
@@ -30,6 +31,9 @@
 クエスト情報は `quests.csv` ファイルに記載されたものを使用しています。
 攻略サイト等によってクエストの番号が異なるので、必要に応じて修正してください。
 
+## 注意
+
+フルスクリーンモードで使うとロクなことにならないと思うので、ROはウィンドウモード推奨です。
 
 ## 連絡先
 
