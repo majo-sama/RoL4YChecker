@@ -7,7 +7,8 @@
 
 ## ダウンロード
 
-- [RoL4YChecker.zip](https://github.com/majo-sama/RoL4YChecker/releases/download/0.1.0/RoL4YChecker.zip)
+- ~~[RoL4YChecker.zip](https://github.com/majo-sama/RoL4YChecker/releases/download/0.1.0/RoL4YChecker.zip)~~
+  - 不具合修正中！
 
 ## 使い方
 
