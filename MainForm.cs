@@ -59,7 +59,7 @@ namespace RoL4YChecker
             labelQuest_2.Text = "チャットログのディレクトリを指定";
             labelQuest_3.Text = "/savechat 実行で反映";
 
-            var watcher = new FileSystemWatcher();
+            watcher = new FileSystemWatcher();
             watcher.Path = ChatDir;
             watcher.Filter = "*.txt";
             watcher.NotifyFilter = NotifyFilters.FileName;
@@ -161,6 +161,8 @@ namespace RoL4YChecker
                 return;
             }
 
+            bool hasQuestLog = false;
+
             foreach (var line in lines)
             {
                 if (line.EndsWith("』　ミッション完了"))
@@ -170,6 +172,7 @@ namespace RoL4YChecker
 
                     var quest = questList.FirstOrDefault(q => q.Name.Equals(questName));
                     quest.Status = Quest.QuestStatus.Cleared;
+                    hasQuestLog = true;
                 }
                 else if (line.StartsWith("ミッション発生　『"))
                 {
@@ -178,17 +181,26 @@ namespace RoL4YChecker
 
                     var quest = questList.FirstOrDefault(q => q.Name.Equals(questName));
                     quest.Status = Quest.QuestStatus.Accepted;
+                    hasQuestLog = true;
                 }
             }
 
-            var acceptedOrClearedQuests = questList.Where(q => q.Status != Quest.QuestStatus.Cleared);
+            if (!hasQuestLog)
+            {
+                return;
+            }
+
+            // 受注またはクリアされたクエスト一覧
+            var acceptedOrClearedQuests = questList.Where(q => q.Status != Quest.QuestStatus.Waiting);
             if (acceptedOrClearedQuests.Count() > 0)
             {
-                currentPhase = acceptedOrClearedQuests.Min(q => q.Phase);
+                currentPhase = acceptedOrClearedQuests.Max(q => q.Phase);
             }
-            else
+
+            // ただし、currentPhaseのクエストがすべてクリア済みの場合、次のフェーズの扱いとする
+            if (questList.Count(q => q.Phase == currentPhase && q.Status == Quest.QuestStatus.Cleared) == 8)
             {
-                currentPhase = 6; // 全てクリア済み
+                currentPhase++;
             }
 
             foreach (var quest in questList.Where(q => q.Phase < currentPhase))
@@ -201,10 +213,10 @@ namespace RoL4YChecker
         private void UpdateDisplay()
         {
             var currentPhaseQuests = questList.Where(q => q.Phase == currentPhase).ToList();
-            if (currentPhase == 6)
-            {
-                currentPhaseQuests = questList.Where(q => q.Phase == 5).ToList();
-            }
+            //if (currentPhase == 6)
+            //{
+            //    currentPhaseQuests = questList.Where(q => q.Phase == 5).ToList();
+            //}
 
 
             Invoke(new Action(() =>

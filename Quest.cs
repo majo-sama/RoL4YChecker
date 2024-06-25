@@ -19,5 +19,10 @@ namespace RoL4YChecker
             Accepted,
             Cleared
         }
+
+        public override string ToString()
+        {
+            return $"{Name} - {Status}";
+        }
     }
 }

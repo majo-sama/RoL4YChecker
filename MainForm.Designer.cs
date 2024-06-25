@@ -165,7 +165,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Opacity = 0.5D;
-            this.Text = "RoL4UChecker 0.1.0";
+            this.Text = "RoL4UChecker";
             this.TopMost = true;
             this.contextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
