@@ -8,6 +8,7 @@
 ## ダウンロード
 
 - [RoL4YChecker.zip](https://github.com/majo-sama/RoL4YChecker/releases/download/0.1.1/RoL4YChecker.zip)
+  - 通常版
 - [RoL4UChecker_Debug.zip](https://github.com/majo-sama/RoL4YChecker/releases/download/0.1.1/RoL4UChecker_Debug.zip)
   - Windows Defender等によりダウンロード/実行がブロックされる場合は、こちらをお試しください
 
